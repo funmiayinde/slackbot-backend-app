@@ -1,0 +1,6 @@
+{
+	"apps" : [{
+		"script": "/app/dist/app.js",
+		"cwd" : "/app"
+	}]
+}
