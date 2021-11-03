@@ -1,0 +1,59 @@
+_metadata:
+  major_version: 1
+  minor_version: 1
+display_information:
+  name: simple-bot
+features:
+  app_home:
+    home_tab_enabled: false
+    messages_tab_enabled: true
+    messages_tab_read_only_enabled: false
+  bot_user:
+    display_name: bot
+    always_online: true
+  slash_commands:
+    - command: /bot
+      url: https://d62e-102-67-16-12.ngrok.io/slack/events
+      description: Initiate a conversation with the bot
+      usage_hint: "hello"
+      should_escape: false
+oauth_config:
+  redirect_urls:
+    - https://d62e-102-67-16-12.ngrok.io/slack/events
+  scopes:
+    user:
+      - channels:read
+      - groups:read
+      - im:history
+      - im:read
+      - users:read
+    bot:
+      - app_mentions:read
+      - channels:history
+      - channels:join
+      - channels:read
+      - chat:write
+      - chat:write.customize
+      - chat:write.public
+      - commands
+      - dnd:read
+      - groups:history
+      - im:read
+      - im:write
+      - mpim:history
+      - mpim:read
+      - mpim:write
+      - users.profile:read
+      - users:read
+      - channels:manage
+      - groups:read
+      - groups:write
+      - im:history
+      - incoming-webhook
+settings:
+  interactivity:
+    is_enabled: true
+    request_url: https://d62e-102-67-16-12.ngrok.io/slack/events
+  org_deploy_enabled: false
+  socket_mode_enabled: false
+  token_rotation_enabled: false

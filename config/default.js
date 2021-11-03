@@ -4,6 +4,7 @@ console.log('port', PORT);
 module.exports = {
     app: {
         appName: process.env.APP_NAME || 'slackbot-backend-api',
+        baseUrl: process.env.BASE_URL || `http://localhost:${PORT}`,
         environment: process.env.NODE_ENV || 'development',
         port: PORT
     },
@@ -21,9 +22,8 @@ module.exports = {
         },
     },
     slack: {
-        credentials: {
-            apiKey: process.env.GOOGLE_API_KEY,
-            provider: process.env.GOOGLE_AS_PROVIDER,
-        }
+        user_token: process.env.SLACK_BOT_USER_OAUTH_TOKEN,
+        signing: process.env.SLACK_SIGNING,
+
     }
 };

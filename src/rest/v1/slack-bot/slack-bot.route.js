@@ -7,9 +7,8 @@ const router = Router();
 
 const ctrl = new SlackController(SlackModel);
 
-router.route('/slack-bots').get(ctrl.processMessage, response);
 router.route('/slack-bots')
 	.get(ctrl.find, response)
-	.post(ctrl.create, response);
+	.post(ctrl.create);
 
 export default router;

@@ -6,22 +6,13 @@ import SlackBotProcessor from './slack-bot.processor';
  * SlackBotSchema
  * */
 const SlackBotSchema = new AppSchema({
-	email: {
+	name: {
 		type: String,
-		lowercase: true,
-		unique: true,
 		trim: true
 	},
-	first_name: {
-		type: String,
+	response: {
+		type: Schema.Types.Mixed,
 		trim: true,
-	},
-	last_name: {
-		type: String,
-		trim: true,
-	},
-	password: {
-		type: String,
 	},
 	deleted: {
 		type: Boolean,
