@@ -22,16 +22,17 @@ app.use(cors({}));
 app.set('port', config.get('app.port'));
 
 export default intiDatabase()
-    .then(() => initBot())
-    .then(() => loadRoutes(app))
+    // .then(() => initBot())
+    // .then(() => loadRoutes(app))
     .then(async (app) => {
-        const server = await http.createServer(app)
-            .listen(config.get('app.port'));
-        console.log(`\n
-	\tApplication listening on ${config.get('app.baseUrl')}\n
-	\tEnvironment => ${config.util.getEnv('NODE_ENV')}: ${server}\n
-	\tDate: ${new Date()}`);
-        return Q.resolve(app);
+        await initBot();
+    //     const server = await http.createServer(app)
+    //         .listen(config.get('app.port'));
+    //     console.log(`\n
+	// \tApplication listening on ${config.get('app.baseUrl')}\n
+	// \tEnvironment => ${config.util.getEnv('NODE_ENV')}: ${server}\n
+	// \tDate: ${new Date()}`);
+    //     return Q.resolve(app);
     }, err => {
         console.log('There was an un catch error');
         console.error(err);
