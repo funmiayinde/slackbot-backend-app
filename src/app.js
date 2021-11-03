@@ -25,7 +25,7 @@ export default intiDatabase()
     // .then(() => initBot())
     .then(() => loadRoutes(app))
     .then(async (app) => {
-        await initBot();
+        // await initBot();
         const server = await http.createServer(app)
             .listen(config.get('app.port'));
         console.log(`\n
