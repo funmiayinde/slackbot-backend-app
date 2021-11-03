@@ -2,7 +2,7 @@ import '@babel/polyfill';
 import config from 'config';
 import http from 'http';
 import loadRoutes from './routing';
-import initBot from './bot.js';
+// import initBot from './bot.js';
 import intiDatabase from './setup/database';
 import express from 'express';
 import logger from 'morgan';
